@@ -93,20 +93,18 @@ while keyboard.is_pressed('q') == False:
 
     #Click on the confirm button if it is on the screen
     if (confirm_pos) != None:
-            print('confirming')
             confirm_point=pyautogui.center(confirm_pos)
             click(confirm_pos[0]+random.randrange(REFRESH_CONFIRM_BUTTON_MIN_X_OFFSET, REFRESH_CONFIRM_BUTTON_MAX_X_OFFSET), confirm_pos[1]+random.randrange(REFRESH_CONFIRM_BUTTON_MIN_Y_OFFSET, REFRESH_CONFIRM_BUTTON_MAX_Y_OFFSET))
             isChecked = False
     #Click on the refresh button if the shop has already been checked and the confirm button isn't on the screen
     elif isChecked and (refresh_pos) != None and (confirm_pos) == None:
-        print('refreshing')
         refresh_point=pyautogui.center(refresh_pos)
         click(refresh_pos[0]+random.randrange(REFRESH_BUTTON_MIN_X_OFFSET, REFRESH_BUTTON_MAX_X_OFFSET), refresh_pos[1]+random.randrange(REFRESH_BUTTON_MIN_Y_OFFSET, REFRESH_BUTTON_MAX_Y_OFFSET))
     #Check for items in the shop
     else:
         check_for_items()
         keyboard.press_and_release('up arrow')
-        time.sleep(0.25)    #Extra time to allow the scroll to complete
+        time.sleep(0.75)    #Extra time to allow the scroll to complete
         check_for_items()
         isChecked = True
 
