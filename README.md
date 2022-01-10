@@ -17,3 +17,5 @@ This program was built using python 3.9 along with the following libraries
 - opencv-python  
 
 These libraries can be installed by downloading pip and running the command ```pip install ___```
+
+The 'up arrow' key must also be bound to scroll up in bluestacks
